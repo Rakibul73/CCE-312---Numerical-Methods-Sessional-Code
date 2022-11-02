@@ -1,4 +1,3 @@
-#  https://steemit.com/hive-181430/@sheham-sh/siz-tutorial-or-or-gauss-jordan-method-in-python-without-numpy-or-or-20-to-siz-official-or-or-by-sheham-sh
 
 def showMatrix():
     print("\n")
