@@ -1,9 +1,4 @@
-## module choleski
-''' L = choleski(a)
-Choleski decomposition: [L][L]transpose = [a]
-x = choleskiSol(L,b)
-Solution phase of Choleski's decomposition method
-'''
+
 import numpy as np
 import math
 
