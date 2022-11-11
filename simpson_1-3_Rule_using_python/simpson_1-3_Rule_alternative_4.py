@@ -11,7 +11,7 @@ def simpson(start, end, n, f):
     ans = f(start) + f(end)
     i = 0
     while(start + h != end):
-        if i % 2 == 0 : 
+        if i % 2 == 0 :
             ans += 4 * f(start + h)
         else:
             ans += 2 * f(start + h)
