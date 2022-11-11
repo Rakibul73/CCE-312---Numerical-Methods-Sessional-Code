@@ -1,3 +1,6 @@
+# https://linguisticmaz.medium.com/implementing-polynomial-regression-in-python-d9aedf520d56
+# https://github.com/Mazen-ALG/The-Data-Series/tree/master/Episode%204.7
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
