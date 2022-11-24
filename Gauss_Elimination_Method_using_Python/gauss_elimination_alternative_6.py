@@ -48,5 +48,5 @@ def GEPP(A, b, doPricing = True):
 if __name__ == "__main__":
     A = np.array([[1.,-1.,1.,-1.],[1.,0.,0.,0.],[1.,1.,1.,1.],[1.,2.,4.,8.]])
     b =  np.array([[14.],[4.],[2.],[2.]])
-    print GEPP(np.copy(A), np.copy(b), doPricing = False)
-    print GEPP(A,b)
+    print (GEPP(np.copy(A), np.copy(b), doPricing = False))
+    print (GEPP(A,b))
