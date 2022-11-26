@@ -1,28 +1,10 @@
 import numpy as np
-from scipy.sparse import diags
-import pandas as pd
+import scipy
+from numpy.linalg import cholesky
 
 # We consider that matrix A can be written as A=L*L^T.
 # Here we define the function responsible for finding the L matrix.
 
-def Cholesky(A):
-    A=np.array(A, float)
-    L=np.zeros_like(A)
-    n,_=np.shape(A)
-
-    for i in range(n):
-        
-        L[i,i]=np.sqrt(A[i,i]-L[i,i] ** 2)
-
-
-        sum = L[i,i-1] * L[i-1,i-1] + L[i,i] * L[i-1,i]
-        L[i,i-1] = (A[i,i-1]-sum) / L[i-1,i-1]
-
-        
-    return L
-    
-# Now we define a function that solves our system using firstly forward substition and then backward
-# It uses the matrix given from the first function, its transpose and B from Ax=B and provides the solution x
 
 def solver(L,U,b):
   L=np.array(L, float)
@@ -48,27 +30,12 @@ def solver(L,U,b):
     x[i]=(y[i]-sumj)/U[i,i]
   return x
     
-# Finally, we constract matrix A (500x500)
-
-a = [1+i for i in range(2, 501)]
-b = [1000+i for i in range(1, 501)]
-c = [1+i for i in range(2, 501)]
-offset = [-1,0,1]
-matrix = np.array([a, b, c])
-A = diags(matrix, offset).toarray()
-
-# And then B (500x1)
-
-B = [1+i for i in range(1,501)]
-
-l = Cholesky(A)
-U = np.transpose(l)
-x = solver(l, U, B)
 
 # Now, we use the built-in function for Cholesky Decomposition to compare our results
 
-from numpy.linalg import cholesky
-
+A = scipy.array([ [3,-.1,-.2],
+                [.1,7,-.3], 
+                [.3,-.2,10] ])
 L = cholesky(A)
 U = np.transpose(L)
 x = solver(L, U, B)

@@ -15,6 +15,7 @@ a = np.array([[ 3, -0.1, -0.2],
 b = np.array([7.85, -19.3, 71.4])
 aOrig = a.copy()
 L = choleski(a)
+print(L)
 x = choleskiSol(L,b)
 # print("x =",x)
 for i in range(3):
