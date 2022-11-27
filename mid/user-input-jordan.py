@@ -6,7 +6,7 @@ x = np.zeros(n)
 
 for i in range(n):
     for j in range(n+1):
-        a[i][j] = input()
+        a[i][j] = float(input( 'a['+str(i)+']['+ str(j)+']='))
 
 for i in range(n):
     for j in range(n):

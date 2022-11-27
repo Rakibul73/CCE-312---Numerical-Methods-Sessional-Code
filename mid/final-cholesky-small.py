@@ -23,22 +23,46 @@ def cramer(mat, constant):
     
     return X1 , X2 , X3
 
+
+
+
 A = np.array([ [3,-.1,-.2],
                 [.1,7,-.3], 
                 [.3,-.2,10] ])
 
+b = np.array([7.85, -19.3, 71.4])
+
+
+# A = np.array([ [10,40,70],
+#                 [20,50,80], 
+#                 [70,80,80] ])
+
+# b = np.array([300,360,390])
+
+# A = np.array([ [1,1,-1],
+#                 [2,3,5], 
+#                 [3,2,-3] ])
+
+# b = np.array([2,-3,6])
+
+'''
+3
+10 40 70 300
+20 50 80 360
+30 60 80 390
+Ans = 1, 2, 3
+
+'''
 
 P, L, U = scipy.linalg.lu(A)
 
+
 print ("L:")
-pprint.pprint(L)
+print(L)
 
 print ("U:")
 pprint.pprint(U)
 
-
-
-b = np.array([7.85, -19.3, 71.4])
 
 Y1 , Y2, Y3 = cramer(L,b)
 y = np.array([ Y1 , Y2 , Y3])

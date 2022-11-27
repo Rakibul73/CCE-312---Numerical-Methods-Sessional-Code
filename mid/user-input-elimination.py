@@ -4,9 +4,12 @@ n = int(input("enter unknown: "))
 a = np.zeros((n , n + 1))
 x = np.zeros(n)
 
+
+
 for i in range(n):
     for j in range(n+1):
-        a[i][j] = input()
+        a[i][j] = float(input( 'a['+str(i)+']['+ str(j)+']='))
+
 
 for i in range(n):
     for j in range(i+1 , n):
