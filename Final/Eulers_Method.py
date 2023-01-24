@@ -15,6 +15,6 @@ print('x \t\ty(Euler) \ty(Analytical)')
 print('%f \t%f \t%f' % (x, y, f(x)))    
 
 for i in range(n):
-    y = y + dy(x)*h      
-    x = x + h              
+    y += dy(x)*h      
+    x += h              
     print('%f \t%f \t%f' % (x, y, f(x)))

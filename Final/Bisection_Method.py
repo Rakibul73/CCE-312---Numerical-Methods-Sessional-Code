@@ -5,6 +5,9 @@ f = lambda x: 2*x**2 - 5*x + 3
 
 x1, x2 = map(float, input("Enter the initial interval (x1 x2): ").split())
 
+# x1 = float(input())
+# x2 = float(input())
+
 
 if f(x1)*f(x2) > 0:
     print("No roots exist within the given interval")
