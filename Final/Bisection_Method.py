@@ -3,33 +3,30 @@ from math import sin
 
 f = lambda x: 2*x**2 - 5*x + 3
 
-x1, x2 = map(float, input("Enter the initial interval (x1 x2): ").split())
-
-# x1 = float(input())
-# x2 = float(input())
+a, b = map(float, input("Enter the initial interval (a b): ").split())
 
 
-if f(x1)*f(x2) > 0:
+if f(a)*f(b) > 0:
     print("No roots exist within the given interval")
-    raise SystemExit
+    exit()
 
-if f(x1)*f(x2) == 0:
-    if f(x1) == 0: print('The root: %0.5f' % x1)
-    if f(x2) == 0: print('The root: %0.5f' % x2)
-    raise SystemExit
+if f(a)*f(b) == 0:
+    if f(a) == 0: print('The root: %0.5f' % a)
+    elif f(b) == 0: print('The root: %0.5f' % b)
+    exit()
 
-xr = x1
-while abs(f(xr)) >= 1e-6:
-    # xr = x2 - (x2-x1)/(f(x2)-f(x1))*f(x2)
-    xr = (x1 + x2) / 2
-    yh = f(xr)
+c = a
+while abs(f(c)) >= 1e-6:
+    # c = (a*f(b) - b*f(a)) / (f(b) - f(a))
+    c = (a + b) / 2
+    yh = f(c)
 
-    if f(x1) * f(xr) < 0:
-        x2 = xr
+    if f(a) * f(c) < 0:
+        b = c
         
-    elif f(x1) * f(xr) > 0:
-        x1 = xr
+    elif f(a) * f(c) > 0:
+        a = c
 
     else: break
 
-print('The Root: %0.5f' % xr)
+print('The Root: %0.5f' % c)
