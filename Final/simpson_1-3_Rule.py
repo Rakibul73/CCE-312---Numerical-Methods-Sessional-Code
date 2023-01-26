@@ -1,12 +1,18 @@
-from math import sin, pi
+import sympy as sy
 
-f = lambda x: 0.2 + 25*x - 200*x**2 + 675*x**3 - 900*x**4 + 400*x**5
-a = 0
-b = 0.8
-e = 1.640533
+f = lambda x: 2000.0*sy.log(140000.0/ (140000.0  -  (2100.0*x))   ) - 9.8*x
+a = 8
+b = 30
+# e = 1.640533
 
-I = (b-a) * ((f(a) + (4*f((b-a)/2)) + f(b)) / 6.0)
-# n = 5
+# jodi exact value e = 1.640533 deya na thake.. kintu error bair korte koy taile
+x = sy.Symbol("x")
+e = sy.integrate(f(x), (x, a, b))
+print("Exact value = " , e)
+
+
+I = (b-a) * ((f(a) + (4*f((a+b)/2)) + f(b)) / 6.0)
+# n = 4
 # h = (b - a) / n
 
 

@@ -2,7 +2,7 @@
 
 # def f(x):
 #     return 2*x**2 - 5*x + 3   # Function from the given equation
-f = lambda x: 2*x**2 - 5*x + 3
+f = lambda x: x**3 - 0.165*x**2 + 3.993*10**-4
 
 x1, x2 = map(float, input("Enter the initial interval (x1 x2): ").split())
 # x1 = 0, 2         # The initial guesses

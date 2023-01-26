@@ -1,8 +1,8 @@
 
 import numpy as np
 
-x = np.array([    0.698132 , 0.959931, 1.134464, 1.570796,  1.919862  ])
-y = np.array([    0.188224,  0.209138, 0.230052 , 0.250965 ,   0.313707 ])
+x = np.array([    1,2,3,4,5,6  ])
+y = np.array([    1,2,3,4,5,6 ])
 
 
 # x = []
@@ -33,8 +33,8 @@ a_0 = m_y - a_1*m_x
 
 print(a_0)
 print(a_1)
-print("y = " + str(round(a_0, 2)) + "+ " + str(round(a_1, 2)) + " x")
+print("y = " + str(round(a_0, 3)) + " + " + str(round(a_1, 3)) + "*x")
 
 
-future = float(input())
+future = float(input("enter a value to predict = "))
 print(a_0 + a_1* future)
